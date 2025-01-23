@@ -21,7 +21,6 @@
 		"eslint-config-prettier": "^8.8.0",
 		"ical-generator": "^4.1.0",
 		"prettier": "^2.8.8",
-		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^5.0.0",
 		"svelte-check": "^3.4.3",
 		"svelte-preprocess": "^5.0.4",
