@@ -1,9 +1,9 @@
 import adapter from '@sveltejs/adapter-cloudflare';
-import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default {
   kit: {
-    adapter: adapter(),
-    // other configurations
+    adapter: adapter({
+      out: '.svelte-kit/cloudflare'
+    })
   }
-});
+};
