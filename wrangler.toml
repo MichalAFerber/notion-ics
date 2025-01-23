@@ -1,0 +1,5 @@
+name = "notion-ics"
+type = "javascript"
+account_id = "8a0d49b1f3fdcdadec135562ec8a4fdc"
+workers_dev = true
+compatibility_date = "2025-01-23"
