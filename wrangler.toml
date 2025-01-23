@@ -1,3 +1,7 @@
 name = "notion-ics"
 compatibility_date = "2025-01-23"
 pages_build_output_dir = ".svelte-kit/cloudflare"
+
+[vars]
+NOTION_TOKEN="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"
+ACCESS_KEY="3dw9UjWPyllrGEsSfWXtvyGMpHFZydKgI0vPRCHRdWOY4yBkm4OsY0twFbsFxeD4"
