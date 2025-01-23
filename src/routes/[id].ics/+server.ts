@@ -39,20 +39,21 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		title: string;
 		date: { start: string; end: string | null; time_zone: string | null };
 	}[] = databaseEntries.flatMap((object) => {
-		if (object.properties[config.dateProperty].date === null) {
+		const dateProperty = object.properties[config.dateProperty]?.date;
+		if (!dateProperty || !dateProperty.start) {
 			return [];
 		}
 		return [
 			{
-				title: object.properties[config.titleProperty].title[0].text.content,
-				date: object.properties[config.dateProperty].date
+				title: object.properties[config.titleProperty]?.title[0]?.text?.content || 'Untitled Event',
+				date: dateProperty
 			}
 		];
 	});
-
+	
 	const calendar = ical({
 		name: databaseMetadata.title[0].text.content,
-		prodId: { company: 'Tomi Chen', language: 'EN', product: 'notion-ics' }
+		prodId: { company: 'Michal Ferber', language: 'EN', product: 'notion-ics' }
 	});
 	filtered.forEach((event) => {
 		calendar.createEvent({

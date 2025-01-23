@@ -4,16 +4,15 @@ import type { QueryDatabaseParameters } from '@notionhq/client/build/src/api-end
 export default {
 	filter: {
 		and: [
-			{ property: 'Status', select: { does_not_equal: 'Completed' } },
-			{ property: 'Status', select: { does_not_equal: 'Nope' } },
-			{ property: 'Type', select: { equals: 'Task' } }
+			{ property: 'Category', select: { does_not_equal: 'X' } },
+			{ property: 'Category', select: { does_not_equal: 'Y' } }
 		]
 	},
-	dateProperty: 'Scheduled',
+	dateProperty: 'Next event',
 	titleProperty: 'Name',
 	busy: ICalEventBusyStatus.FREE
 } as {
-	filter: Readonly<QueryDatabaseParameters['filter']>;
+	//filter: Readonly<QueryDatabaseParameters['filter']>;
 	dateProperty: Readonly<string>;
 	titleProperty: Readonly<string>;
 	busy: Readonly<ICalEventBusyStatus>;
